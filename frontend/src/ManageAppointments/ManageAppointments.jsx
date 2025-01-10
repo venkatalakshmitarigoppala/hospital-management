@@ -7,7 +7,7 @@ export default function ManageAppointments() {
         fetchAppointments()
     }, [])
     async function handleConfirm(id) {
-        axios.put(`http://localhost:4000/api/appointments/confirm/${id}`)
+        axios.put(`https://hospital-management-mzud.onrender.com/api/appointments/confirm/${id}`)
             .then((res) => {
                 if (res.status === 204)
                     alert("Confirmed")
@@ -15,7 +15,7 @@ export default function ManageAppointments() {
             })
     }
     async function handleCancel(id) {
-        axios.put(`http://localhost:4000/api/appointments/cancel/${id}`)
+        axios.put(`https://hospital-management-mzud.onrender.com/api/appointments/cancel/${id}`)
             .then((res) => {
                 if (res.status === 204)
                     alert("Cancelled")
@@ -23,7 +23,7 @@ export default function ManageAppointments() {
             })
     }
     async function fetchAppointments() {
-        axios.get("http://localhost:4000/api/appointments")
+        axios.get("https://hospital-management-mzud.onrender.com/api/appointments")
             .then((res) => {
                 if (res.status === 200) {
                     console.log(res.data)
